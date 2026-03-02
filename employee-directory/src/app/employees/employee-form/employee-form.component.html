@@ -1,0 +1,39 @@
+<mat-toolbar color="primary">
+  Add Employee
+</mat-toolbar>
+
+<div class="form-container">
+  <mat-card>
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>First Name</mat-label>
+        <input matInput formControlName="firstName">
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Last Name</mat-label>
+        <input matInput formControlName="lastName">
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Email</mat-label>
+        <input matInput formControlName="email">
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Department</mat-label>
+        <mat-select formControlName="department">
+          <mat-option value="IT">IT</mat-option>
+          <mat-option value="HR">HR</mat-option>
+          <mat-option value="Finance">Finance</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <button mat-raised-button color="primary" type="submit" class="full-width">
+        Submit
+      </button>
+
+    </form>
+  </mat-card>
+</div>

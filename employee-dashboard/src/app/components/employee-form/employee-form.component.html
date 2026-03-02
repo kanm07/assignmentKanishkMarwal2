@@ -1,0 +1,47 @@
+<mat-card>
+  <mat-card-title>Add Employee</mat-card-title>
+
+  <form [formGroup]="employeeForm" (ngSubmit)="onSubmit()" class="form-grid">
+
+    <mat-form-field appearance="outline">
+      <mat-label>First Name</mat-label>
+      <input matInput formControlName="firstName">
+      <mat-error *ngIf="employeeForm.controls.firstName.invalid">Required</mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Last Name</mat-label>
+      <input matInput formControlName="lastName">
+      <mat-error *ngIf="employeeForm.controls.lastName.invalid">Required</mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Email</mat-label>
+      <input matInput formControlName="email">
+      <mat-error *ngIf="employeeForm.controls.email.invalid">Enter valid email</mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Department</mat-label>
+      <mat-select formControlName="department">
+        <mat-option *ngFor="let dept of departments" [value]="dept">
+          {{ dept }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Date of Joining</mat-label>
+      <input matInput [matDatepicker]="picker" formControlName="dateOfJoining">
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+
+    <div class="button-row">
+      <button mat-raised-button color="primary" type="submit">
+        Add Employee
+      </button>
+    </div>
+
+  </form>
+</mat-card>

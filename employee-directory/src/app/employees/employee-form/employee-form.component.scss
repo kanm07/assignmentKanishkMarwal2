@@ -1,0 +1,16 @@
+.form-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+}
+
+mat-card {
+  width: 420px;
+  padding: 30px;
+  border-radius: 16px;
+}
+
+.full-width {
+  width: 100%;
+  margin-bottom: 18px;
+}
